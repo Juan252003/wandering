@@ -1,11 +1,12 @@
 class location:
+    
     def __init__(self):
         self.location_wandering = {}
     
-    def add_wardering(self, wandering, location):
-        self.location_wanderings[wandering] = location
+    def add_wandering(self, wandering, track):
+        self.location_wanderings[wandering] = track
         
-    def move_wardering(self, wandering):
+    def move_wandering(self, wandering):
         delta_X, delta_Y = wandering.walk()
         location_now = self.location_wandering[wandering]
         new_location = location_now.move(delta_X, delta_Y)
@@ -14,6 +15,7 @@ class location:
     
     def get_location(self, wandering):
         return self.location_wanderings[wandering]
+    
     
     
         
