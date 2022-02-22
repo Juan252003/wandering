@@ -30,8 +30,28 @@ def graph(x, y):
     graphics.line(x, y, legend='Distancias')
     show(graphics)
     
-
-
+def main(distances_walk, number_attempts, type_wandering):
+    average_walking_distance = []
+    
+    for stops in distances_walk:
+        distances = simulate_walk(stops, number_attempts, type_wandering)
+        middle_distances = round(sum(distances) / len(distances), 4)
+        max_distances = max(distances)
+        min_distances = min(distances)
+        average_walking_distance.append(middle_distances)
+        print(f'{type_wandering.__name__} Caminata aleatoria de {stops} pasos')
+        print(f'Media = {middle_distances}')
+        print(f'Max = {max_distances}')
+        print(f'Min = {min_distances}')
+    graph(distances_walk, average_walking_distance)
+    
+if __name__ == '__main__':
+    
+    distances_walk = [10, 100, 1000, 10000]
+    number_attempts = 100
+    main(distances_walk, number_attempts, ComunWandering)
+    
+        
         
 
         
