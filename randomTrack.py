@@ -51,9 +51,3 @@ if __name__ == '__main__':
     distances_walk = [10, 100, 1000, 10000]
     number_attempts = 100
     main(distances_walk, number_attempts, ComunWandering)
-    
-        
-        
-
-        
-    
